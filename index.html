@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoxton Strategic - Global Tech Leadership & Strategic Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            border-bottom: 2px solid #000;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-white {
+            background: #fff;
+            color: #000;
+        }
+
+        .section-black {
+            background: #000;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 12rem 2rem 8rem;
+            text-align: center;
+            background: #fff;
+            color: #000;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .cta-button-white {
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+        }
+
+        .cta-button-white:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* About Section */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .about-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .headshot {
+            width: 300px;
+            height: 300px;
+            background: url('/placeholder.svg?height=300&width=300') center/cover;
+            border: 4px solid #fff;
+            filter: grayscale(100%);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .metric {
+            background: #fff;
+            color: #000;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid #fff;
+        }
+
+        .metric h4 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric p {
+            font-weight: 600;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            padding: 3rem;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .service-card:nth-child(odd) {
+            background: #fff;
+            color: #000;
+        }
+
+        .service-card:nth-child(even) {
+            background: #000;
+            color: #fff;
+        }
+
+        .service-number {
+            font-size: 1rem;
+            font-weight: 900;
+            opacity: 0.6;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .portfolio h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #000;
+            background: #fff;
+            color: #000;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .headshot {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">HOXTON STRATEGIC</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>17 Years Global Tech Leadership. Cross-Industry Innovation. Strategic Scale-Up Excellence.</h1>
+            <p>Hoxton Strategic brings 17 years of cross-continental expertise in over 20 countries to help technology scale-ups and established businesses transcend their current trajectory.</p>
+            <a href="#contact" class="cta-button">Ready to Transcend Your Industry?</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section section-black">
+        <div class="container">
+            <div class="about">
+                <div class="about-content">
+                    <h2>Justin Hancock</h2>
+                    <h3>From startup founder → Global technology executive → Active fractional leader and SeidrLab partner</h3>
+                    
+                    <div class="metrics">
+                        <div class="metric">
+                            <h4>99M+</h4>
+                            <p>Customers Reached</p>
+                        </div>
+                        <div class="metric">
+                            <h4>$10B+</h4>
+                            <p>Merger Integration</p>
+                        </div>
+                        <div class="metric">
+                            <h4>2000+</h4>
+                            <p>People Led</p>
+                        </div>
+                        <div class="metric">
+                            <h4>20+</h4>
+                            <p>Countries</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="headshot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-white">
+        <div class="container">
+            <h2 class="section-title">Strategic Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01.</div>
+                    <div class="service-title">Fractional Chief Product Officer</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02.</div>
+                    <div class="service-title">Strategic Marketing & Operations</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03.</div>
+                    <div class="service-title">AI Strategy & Automation</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04.</div>
+                    <div class="service-title">Executive Leadership Development</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">05.</div>
+                    <div class="service-title">Strategic Advisory</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">06.</div>
+                    <div class="service-title">Digital Transformation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section section-black">
+        <div class="container">
+            <div class="portfolio">
+                <h2>Portfolio of work available upon request</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-white">
+        <div class="container">
+            <h2 class="section-title">Ready to Transform?</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message. We will be in touch soon.');
+        });
+    </script>
+</body>
+</html>

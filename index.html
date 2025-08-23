@@ -292,19 +292,25 @@
             justify-content: center;
         }
 
-        .service-item:nth-child(odd) .service-number-title {
+        .service-number-title {
             background: #fff;
             color: #000;
             border: 1px solid #333;
         }
 
-        .service-item:nth-child(odd) .service-description {
+        .service-description {
             background: #000;
             color: #fff;
             border: 1px solid #333;
         }
 
         .service-item:nth-child(even) .service-number-title {
+            order: 2;
+        }
+
+        .service-item:nth-child(even) .service-description {
+            order: 1;
+        }-item:nth-child(even) .service-number-title {
             background: #000;
             color: #fff;
             border: 1px solid #333;
@@ -762,8 +768,6 @@
             <div class="credibility-signals">
                 <h3>Key Credibility Signals</h3>
                 <div class="signals-grid">
-                    <div>✓ 17 years across 20 countries</div>
-                    <div>✓ Working with world leading Private Equity and Venture Capital Investors</div>
                     <div>✓ Netflix/NatGeo content distribution experience</div>
                     <div>✓ Multi-billion merger integration leader</div>
                     <div>✓ Senior leadership across 10+ industries</div>
@@ -772,6 +776,8 @@
                     <div>✓ Award-winning innovation track record</div>
                     <div>✓ Led teams across organizations of 10,000+ employees</div>
                     <div>✓ Functional leader across Product, Design, Analytics, Pricing & Marketing</div>
+                    <div>✓ 17 years across 20 countries</div>
+                    <div>✓ Working with world leading Private Equity and Venture Capital Investors</div>
                 </div>
             </div>
         </div>

@@ -18,6 +18,13 @@
             background: #fff;
         }
 
+        /* Improved container and layout system */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
         /* Header */
         .header {
             position: fixed;
@@ -65,7 +72,7 @@
 
         /* Sections */
         .section {
-            padding: 6rem 2rem;
+            padding: 6rem 0;
         }
 
         .section-white {
@@ -78,14 +85,9 @@
             color: #fff;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         /* Hero Section */
         .hero {
-            padding: 12rem 2rem 8rem;
+            padding: 12rem 0 8rem;
             text-align: center;
             background: #fff;
             color: #000;
@@ -134,39 +136,81 @@
             color: #fff;
         }
 
-        /* About Section */
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+        /* Completely redesigned About section for better desktop layout */
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
         }
 
-        .about-content h2 {
+        .about-header h2 {
             font-size: 3rem;
             font-weight: 900;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
 
-        .about-content h3 {
+        .about-header h3 {
             font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 2rem;
             opacity: 0.8;
+        }
+
+        .headshot-container {
+            text-align: center;
+            margin: 3rem 0;
         }
 
         .headshot {
             width: 300px;
             height: 300px;
-            background: url('/placeholder.svg?height=300&width=300') center/cover;
+            object-fit: cover;
             border: 4px solid #fff;
             filter: grayscale(100%);
+            border-radius: 8px;
+        }
+
+        .journey-text {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 2rem 0 4rem;
+            font-weight: 500;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .content-section h4 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-section li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .content-section li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
 
         .metrics {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -190,30 +234,65 @@
         }
 
         /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0;
-            margin-top: 3rem;
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
         }
 
-        .service-card {
+        /* Redesigned services grid for better mobile/desktop layout */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .service-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 300px;
+        }
+
+        .service-number-title {
             padding: 3rem;
-            border: 1px solid #333;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 200px;
         }
 
-        .service-card:nth-child(odd) {
+        .service-description {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service-item:nth-child(odd) .service-number-title {
             background: #fff;
             color: #000;
+            border: 1px solid #333;
         }
 
-        .service-card:nth-child(even) {
+        .service-item:nth-child(odd) .service-description {
             background: #000;
             color: #fff;
+            border: 1px solid #333;
+        }
+
+        .service-item:nth-child(even) .service-number-title {
+            background: #000;
+            color: #fff;
+            border: 1px solid #333;
+            order: 2;
+        }
+
+        .service-item:nth-child(even) .service-description {
+            background: #fff;
+            color: #000;
+            border: 1px solid #333;
+            order: 1;
         }
 
         .service-number {
@@ -224,36 +303,51 @@
         }
 
         .service-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             line-height: 1.3;
         }
 
-        .section-title {
-            font-size: 3rem;
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 2rem;
-            letter-spacing: -0.02em;
+        .service-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Content sections */
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .content-block h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-block p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
         /* Portfolio Section */
         .portfolio {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 4rem 0;
         }
 
         .portfolio h2 {
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
             letter-spacing: -0.01em;
         }
 
         /* Contact Form */
         .contact-form {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 4rem;
         }
 
         .form-group {
@@ -282,27 +376,61 @@
             border-color: #333;
         }
 
-        /* Mobile Responsive */
+        /* Credibility Signals */
+        .credibility-signals {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .credibility-signals h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .signals-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Improved mobile responsive design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
 
-            .about {
+            .about-content {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 2rem;
             }
 
-            .services-grid {
+            .service-item {
                 grid-template-columns: 1fr;
+            }
+
+            .service-item:nth-child(even) .service-number-title {
+                order: 1;
+            }
+
+            .service-item:nth-child(even) .service-description {
+                order: 2;
             }
 
             .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .signals-grid {
                 grid-template-columns: 1fr;
             }
 
-            .headshot {
-                margin: 0 auto;
+            .container {
+                padding: 0 1rem;
             }
         }
     </style>
@@ -324,7 +452,7 @@
     <section class="hero">
         <div class="container">
             <h1>17 Years Global Tech Leadership. Cross-Industry Innovation. Strategic Scale-Up Excellence.</h1>
-            <p>Hoxton Strategic brings 17 years of cross-continental expertise in over 20 countries to help technology scale-ups and established businesses transcend their current trajectory.</p>
+            <p>Hoxton Strategic brings 17 years of cross-continental expertise in over 20 countries to help technology scale-ups and established businesses transcend their current trajectory. Whether you're a high-growth startup or a mature corporation in non-tech native industries seeking a digital step change, Hoxton Strategic partners with forward-thinking organizations ready to benefit from technology-first strategies.</p>
             <a href="#contact" class="cta-button">Ready to Transcend Your Industry?</a>
         </div>
     </section>
@@ -332,29 +460,31 @@
     <!-- About Section -->
     <section id="about" class="section section-black">
         <div class="container">
-            <div class="about">
-                <div class="about-content">
-                    <h2>Justin Hancock</h2>
-                    <h3>Founder</h3>
-                    
-                    <!-- Added photo positioning and updated journey text -->
-                    <div style="text-align: center; margin: 2rem 0;">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1648741973087-J4rW0wTupzjmewuMk7bur8nxHAc5j7.jpeg" alt="Justin Hancock" style="width: 300px; height: 300px; object-fit: cover; border: 4px solid #fff; filter: grayscale(100%); border-radius: 8px;">
-                    </div>
-                    
-                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Journey: From startup founder → Global Tech Executive → Active fractional leader and SeidrLab Partner</p>
-                    
-                    <!-- Added Current Roles section with bullet points -->
-                    <h4 style="font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem 0;">Current Roles:</h4>
-                    <ul style="list-style: disc; margin-left: 1.5rem; line-height: 1.8;">
+            <div class="about-header">
+                <h2>Justin Hancock</h2>
+                <h3>Founder</h3>
+            </div>
+            
+            <!-- Fixed headshot positioning and URL -->
+            <div class="headshot-container">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1648741973087-J4rW0wTupzjmewuMk7bur8nxHAc5j7.jpeg" alt="Justin Hancock - Founder of Hoxton Strategic" class="headshot">
+            </div>
+            
+            <p class="journey-text">Journey: From startup founder → Global Tech Executive → Active fractional leader and SeidrLab Partner</p>
+            
+            <div class="about-content">
+                <div class="content-section">
+                    <h4>Current Roles:</h4>
+                    <ul>
                         <li>Fractional Product and Strategy leadership at Formbay (Australia's leading clean energy compliance platform)</li>
                         <li>Partner at SeidrLab (AI advisory and strategic agency for mid-cap businesses)</li>
                         <li>Stealth AI startup Co-Founder and CPTO</li>
                     </ul>
-                    
-                    <!-- Added Key Achievements section with bullet points -->
-                    <h4 style="font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem 0;">Key Achievements:</h4>
-                    <ul style="list-style: disc; margin-left: 1.5rem; line-height: 1.8;">
+                </div>
+                
+                <div class="content-section">
+                    <h4>Key Achievements:</h4>
+                    <ul>
                         <li>Built products reaching 99M+ customers internationally</li>
                         <li>Led global integration of Grubhub, Takeaway.com and Just Eat P&T departments in $10+ billion Just Eat Takeaway merger</li>
                         <li>Led Product Department at StarRez responsible for winning Vista Private Equity ($100bn under management) "Highest Customer Value" award</li>
@@ -362,25 +492,25 @@
                         <li>Senior leadership experience across organizations of 10,000+ employees</li>
                         <li>Contributed to multiple high-performing global businesses that achieved successful strategic exits</li>
                     </ul>
-                    
-                    <div class="metrics">
-                        <div class="metric">
-                            <h4>99M+</h4>
-                            <p>Customers Reached</p>
-                        </div>
-                        <div class="metric">
-                            <h4>$10B+</h4>
-                            <p>Merger Integration</p>
-                        </div>
-                        <div class="metric">
-                            <h4>2000+</h4>
-                            <p>People Led</p>
-                        </div>
-                        <div class="metric">
-                            <h4>20+</h4>
-                            <p>Countries</p>
-                        </div>
-                    </div>
+                </div>
+            </div>
+            
+            <div class="metrics">
+                <div class="metric">
+                    <h4>99M+</h4>
+                    <p>Customers Reached</p>
+                </div>
+                <div class="metric">
+                    <h4>$10B+</h4>
+                    <p>Merger Integration</p>
+                </div>
+                <div class="metric">
+                    <h4>2000+</h4>
+                    <p>People Led</p>
+                </div>
+                <div class="metric">
+                    <h4>20+</h4>
+                    <p>Countries</p>
                 </div>
             </div>
         </div>
@@ -389,32 +519,81 @@
     <!-- Services Section -->
     <section id="services" class="section section-white">
         <div class="container">
-            <h2 class="section-title">Strategic Services</h2>
+            <h2 class="section-title">Services Offered</h2>
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-number">01.</div>
-                    <div class="service-title">Fractional Chief Product Officer</div>
+                <!-- Added comprehensive service descriptions -->
+                <div class="service-item">
+                    <div class="service-number-title">
+                        <div class="service-number">01.</div>
+                        <div class="service-title">Fractional Chief Product Officer/Product Leadership Services</div>
+                    </div>
+                    <div class="service-description">
+                        <div class="service-desc">3-12 month engagements for companies needing senior product leadership without full-time commitment. Product roadmaps and strategic planning. Professionalisation of Product Development processes in accordance with global best practices. Product and corporate strategy development. Product and tech department leadership strategies. High-performing team development and executive leadership.</div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-number">02.</div>
-                    <div class="service-title">Strategic Marketing & Operations</div>
+
+                <div class="service-item">
+                    <div class="service-number-title">
+                        <div class="service-number">02.</div>
+                        <div class="service-title">Strategic Marketing & Operations</div>
+                    </div>
+                    <div class="service-description">
+                        <div class="service-desc">Cross-continental market insights for scalable marketing engines and operational frameworks. Internal and external communication systems optimization. Scientific operational optimisation across the business. Enhanced efficiency via cross-functional goal setting and collaborative working methodologies.</div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-number">03.</div>
-                    <div class="service-title">AI Strategy & Automation</div>
+
+                <div class="service-item">
+                    <div class="service-number-title">
+                        <div class="service-number">03.</div>
+                        <div class="service-title">AI Strategy & Automation</div>
+                    </div>
+                    <div class="service-description">
+                        <div class="service-desc">Cutting-edge AI advisory through SeidrLab partnership for institutional-quality AI implementation. AI strategy development and implementation. Strategic automation solutions for mid-cap businesses.</div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-number">04.</div>
-                    <div class="service-title">Executive Leadership Development</div>
+
+                <div class="service-item">
+                    <div class="service-number-title">
+                        <div class="service-number">04.</div>
+                        <div class="service-title">Executive Leadership Development</div>
+                    </div>
+                    <div class="service-description">
+                        <div class="service-desc">Leadership frameworks for scaling technology companies across complex, fast-moving environments. Cross-functional leadership optimization, goal-setting methodologies and communication strategies to achieve radical alignment, clarity and organisational focus.</div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-number">05.</div>
-                    <div class="service-title">Strategic Advisory</div>
+
+                <div class="service-item">
+                    <div class="service-number-title">
+                        <div class="service-number">05.</div>
+                        <div class="service-title">Strategic Advisory</div>
+                    </div>
+                    <div class="service-description">
+                        <div class="service-desc">Navigate growth challenges including complex acquisitions, multi-billion dollar integrations, and international expansion. Market entry strategy and competitive positioning. Building product and leadership capabilities for next growth phase.</div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-number">06.</div>
-                    <div class="service-title">Digital Transformation</div>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Added Approach & Differentiation section -->
+    <section class="section section-black">
+        <div class="container">
+            <div class="content-block">
+                <h3>Approach & Differentiation</h3>
+                <p><strong>Core Philosophy:</strong> Generate creative systems and outcomes through cross-market intelligence + industry-transcendent strategic thinking</p>
+                <p><strong>Unique Value:</strong> Synthesises best practices from diverse markets, industries, and cultural operations that competitors cannot access. Experience spans startup founder to executive level management at prestigious market leader or tech challenger, bringing both entrepreneurial agility and enterprise-scale execution.</p>
+                <p><strong>Target Market:</strong> Technology scale-ups in Series A through E funding rounds, typically $5-100M ARR ready to break through the next growth ceiling AND established businesses in traditional industries ready to benefit from technology-forward strategies and digital transformation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Added Why Global Experience Matters section -->
+    <section class="section section-white">
+        <div class="container">
+            <div class="content-block">
+                <h3>Why Global Experience Matters</h3>
+                <p>In today's interconnected economy, breakthrough strategies often emerge from cross-pollinating insights across different markets and industries. A student housing technology framework perfected in Australia can revolutionize operational efficiency for a London-based service business. Modern eCommerce practices from European markets might unlock growth opportunities for North American technology companies. Payment and integration strategies proven in Canada could transform how Australian enterprises approach their software architecture.</p>
+                <p>This cross-market intelligence provides clients with strategic insights and tactical innovations that their industry-focused competitors simply cannot obtain. The competitive advantage comes not just from a global perspective, but from the ability to identify and adapt winning strategies from unexpected sources across 20 countries and 10+ industries.</p>
             </div>
         </div>
     </section>
@@ -432,6 +611,8 @@
     <section id="contact" class="section section-white">
         <div class="container">
             <h2 class="section-title">Ready to Transform?</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Whether you're entering new markets or building the product and leadership capabilities needed for your next phase of growth, Hoxton Strategic brings the rare combination of entrepreneurial insight and enterprise-scale execution experience.</p>
+            
             <form class="contact-form" action="mailto:justin@hoxtonstrategic.com" method="post" enctype="text/plain">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -452,10 +633,10 @@
                 <button type="submit" class="cta-button">Send Message</button>
             </form>
             
-            <!-- Added credibility signals section -->
-            <div style="margin-top: 4rem; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
-                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">Key Credibility Signals</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.95rem;">
+            <!-- Updated credibility signals with requested changes -->
+            <div class="credibility-signals">
+                <h3>Key Credibility Signals</h3>
+                <div class="signals-grid">
                     <div>✓ 17 years across 20 countries</div>
                     <div>✓ Working with world leading Private Equity and Venture Capital Investors</div>
                     <div>✓ Netflix/NatGeo content distribution experience</div>

@@ -18,7 +18,7 @@
             background: #fff;
         }
 
-        /* Improved container and layout system */
+        /* Container and layout system */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -70,6 +70,24 @@
             opacity: 0.7;
         }
 
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #000;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
         /* Sections */
         .section {
             padding: 6rem 0;
@@ -94,7 +112,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2rem, 4vw, 4rem);
             font-weight: 900;
             letter-spacing: -0.03em;
             line-height: 1.1;
@@ -102,7 +120,7 @@
         }
 
         .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
             max-width: 800px;
             margin: 0 auto 3rem;
             line-height: 1.5;
@@ -118,6 +136,7 @@
             text-decoration: none;
             border: 2px solid #000;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .cta-button:hover {
@@ -136,14 +155,14 @@
             color: #fff;
         }
 
-        /* Completely redesigned About section for better desktop layout */
+        /* About section */
         .about-header {
             text-align: center;
             margin-bottom: 4rem;
         }
 
         .about-header h2 {
-            font-size: 3rem;
+            font-size: clamp(2rem, 3vw, 3rem);
             font-weight: 900;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
@@ -163,17 +182,21 @@
         .headshot {
             width: 300px;
             height: 300px;
+            max-width: 80%;
             object-fit: cover;
             border: 4px solid #fff;
             filter: grayscale(100%);
             border-radius: 8px;
+            display: block;
+            margin: 0 auto;
         }
 
         .journey-text {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
             text-align: center;
-            margin: 2rem 0 4rem;
+            margin: 2rem auto 4rem;
             font-weight: 500;
+            max-width: 90%;
         }
 
         .about-content {
@@ -218,7 +241,7 @@
         .metric {
             background: #fff;
             color: #000;
-            padding: 2rem;
+            padding: 2rem 1rem;
             text-align: center;
             border: 2px solid #fff;
         }
@@ -235,14 +258,14 @@
 
         /* Services Section */
         .section-title {
-            font-size: 3rem;
+            font-size: clamp(2rem, 3vw, 3rem);
             font-weight: 900;
             text-align: center;
             margin-bottom: 3rem;
             letter-spacing: -0.02em;
         }
 
-        /* Redesigned services grid for better mobile/desktop layout */
+        /* Services grid */
         .services-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -252,18 +275,18 @@
         .service-item {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 300px;
+            min-height: auto;
         }
 
         .service-number-title {
-            padding: 3rem;
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         .service-description {
-            padding: 3rem;
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -303,14 +326,24 @@
         }
 
         .service-title {
-            font-size: 1.8rem;
+            font-size: clamp(1.3rem, 2vw, 1.8rem);
             font-weight: 700;
             line-height: 1.3;
         }
 
+        /* Updated service description with proper line breaks */
         .service-desc {
             font-size: 1rem;
-            line-height: 1.6;
+            line-height: 1.8;
+        }
+
+        .service-point {
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-point:last-child {
+            margin-bottom: 0;
         }
 
         /* Content sections */
@@ -332,14 +365,14 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Portfolio Section */
+        /* Portfolio Section - Reduced padding */
         .portfolio {
             text-align: center;
-            padding: 4rem 0;
+            padding: 2rem 0;
         }
 
         .portfolio h2 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
             font-weight: 700;
             letter-spacing: -0.01em;
         }
@@ -376,10 +409,31 @@
             border-color: #333;
         }
 
+        /* Form status messages */
+        .form-status {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
         /* Credibility Signals */
         .credibility-signals {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 4rem auto 0;
             text-align: left;
         }
 
@@ -398,10 +452,27 @@
             line-height: 1.6;
         }
 
-        /* Improved mobile responsive design */
+        /* Footer */
+        .footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile responsive design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 8rem 0 4rem;
             }
 
             .about-content {
@@ -409,8 +480,14 @@
                 gap: 2rem;
             }
 
+            /* Critical fix for service items on mobile */
             .service-item {
                 grid-template-columns: 1fr;
+            }
+
+            .service-number-title,
+            .service-description {
+                padding: 2rem 1.5rem;
             }
 
             .service-item:nth-child(even) .service-number-title {
@@ -423,6 +500,11 @@
 
             .metrics {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .metric {
+                padding: 1.5rem 0.5rem;
             }
 
             .signals-grid {
@@ -431,6 +513,45 @@
 
             .container {
                 padding: 0 1rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .content-block p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Tablet specific adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .service-number-title,
+            .service-description {
+                padding: 2rem;
+            }
+
+            .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .service-title {
+                font-size: 1.2rem;
+            }
+
+            .portfolio h2 {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -445,6 +566,11 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
 
@@ -465,9 +591,10 @@
                 <h3>Founder</h3>
             </div>
             
-            <!-- Fixed headshot positioning and URL -->
             <div class="headshot-container">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1648741973087-J4rW0wTupzjmewuMk7bur8nxHAc5j7.jpeg" alt="Justin Hancock - Founder of Hoxton Strategic" class="headshot">
+                <img src="./images/justin-hancock.jpeg" 
+                     alt="Justin Hancock - Founder of Hoxton Strategic" 
+                     class="headshot">
             </div>
             
             <p class="journey-text">Journey: From startup founder → Global Tech Executive → Active fractional leader and SeidrLab Partner</p>
@@ -521,14 +648,20 @@
         <div class="container">
             <h2 class="section-title">Services Offered</h2>
             <div class="services-grid">
-                <!-- Added comprehensive service descriptions -->
                 <div class="service-item">
                     <div class="service-number-title">
                         <div class="service-number">01.</div>
                         <div class="service-title">Fractional Chief Product Officer/Product Leadership Services</div>
                     </div>
                     <div class="service-description">
-                        <div class="service-desc">3-12 month engagements for companies needing senior product leadership without full-time commitment. Product roadmaps and strategic planning. Professionalisation of Product Development processes in accordance with global best practices. Product and corporate strategy development. Product and tech department leadership strategies. High-performing team development and executive leadership.</div>
+                        <div class="service-desc">
+                            <span class="service-point">3-12 month engagements for companies needing senior product leadership without full-time commitment.</span>
+                            <span class="service-point">Product roadmaps and strategic planning.</span>
+                            <span class="service-point">Professionalisation of Product Development processes in accordance with global best practices.</span>
+                            <span class="service-point">Product and corporate strategy development.</span>
+                            <span class="service-point">Product and tech department leadership strategies.</span>
+                            <span class="service-point">High-performing team development and executive leadership.</span>
+                        </div>
                     </div>
                 </div>
 
@@ -538,7 +671,12 @@
                         <div class="service-title">Strategic Marketing & Operations</div>
                     </div>
                     <div class="service-description">
-                        <div class="service-desc">Cross-continental market insights for scalable marketing engines and operational frameworks. Internal and external communication systems optimization. Scientific operational optimisation across the business. Enhanced efficiency via cross-functional goal setting and collaborative working methodologies.</div>
+                        <div class="service-desc">
+                            <span class="service-point">Cross-continental market insights for scalable marketing engines and operational frameworks.</span>
+                            <span class="service-point">Internal and external communication systems optimization.</span>
+                            <span class="service-point">Scientific operational optimisation across the business.</span>
+                            <span class="service-point">Enhanced efficiency via cross-functional goal setting and collaborative working methodologies.</span>
+                        </div>
                     </div>
                 </div>
 
@@ -548,7 +686,11 @@
                         <div class="service-title">AI Strategy & Automation</div>
                     </div>
                     <div class="service-description">
-                        <div class="service-desc">Cutting-edge AI advisory through SeidrLab partnership for institutional-quality AI implementation. AI strategy development and implementation. Strategic automation solutions for mid-cap businesses.</div>
+                        <div class="service-desc">
+                            <span class="service-point">Cutting-edge AI advisory through SeidrLab partnership for institutional-quality AI implementation.</span>
+                            <span class="service-point">AI strategy development and implementation.</span>
+                            <span class="service-point">Strategic automation solutions for mid-cap businesses.</span>
+                        </div>
                     </div>
                 </div>
 
@@ -558,7 +700,10 @@
                         <div class="service-title">Executive Leadership Development</div>
                     </div>
                     <div class="service-description">
-                        <div class="service-desc">Leadership frameworks for scaling technology companies across complex, fast-moving environments. Cross-functional leadership optimization, goal-setting methodologies and communication strategies to achieve radical alignment, clarity and organisational focus.</div>
+                        <div class="service-desc">
+                            <span class="service-point">Leadership frameworks for scaling technology companies across complex, fast-moving environments.</span>
+                            <span class="service-point">Cross-functional leadership optimization, goal-setting methodologies and communication strategies to achieve radical alignment, clarity and organisational focus.</span>
+                        </div>
                     </div>
                 </div>
 
@@ -568,14 +713,18 @@
                         <div class="service-title">Strategic Advisory</div>
                     </div>
                     <div class="service-description">
-                        <div class="service-desc">Navigate growth challenges including complex acquisitions, multi-billion dollar integrations, and international expansion. Market entry strategy and competitive positioning. Building product and leadership capabilities for next growth phase.</div>
+                        <div class="service-desc">
+                            <span class="service-point">Navigate growth challenges including complex acquisitions, multi-billion dollar integrations, and international expansion.</span>
+                            <span class="service-point">Market entry strategy and competitive positioning.</span>
+                            <span class="service-point">Building product and leadership capabilities for next growth phase.</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Added Approach & Differentiation section -->
+    <!-- Approach & Differentiation section -->
     <section class="section section-black">
         <div class="container">
             <div class="content-block">
@@ -587,7 +736,7 @@
         </div>
     </section>
 
-    <!-- Added Why Global Experience Matters section -->
+    <!-- Why Global Experience Matters section -->
     <section class="section section-white">
         <div class="container">
             <div class="content-block">
@@ -598,7 +747,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section - Reduced padding -->
     <section class="section section-black">
         <div class="container">
             <div class="portfolio">
@@ -607,33 +756,9 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section section-white">
+    <!-- Key Credibility Signals - Moved before contact form -->
+    <section class="section section-white">
         <div class="container">
-            <h2 class="section-title">Ready to Transform?</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Whether you're entering new markets or building the product and leadership capabilities needed for your next phase of growth, Hoxton Strategic brings the rare combination of entrepreneurial insight and enterprise-scale execution experience.</p>
-            
-            <form class="contact-form" action="mailto:justin@hoxtonstrategic.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="company">Company</label>
-                    <input type="text" id="company" name="company">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="cta-button">Send Message</button>
-            </form>
-            
-            <!-- Updated credibility signals with requested changes -->
             <div class="credibility-signals">
                 <h3>Key Credibility Signals</h3>
                 <div class="signals-grid">
@@ -652,6 +777,51 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="section section-black">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">Ready to Transform?</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; color: #fff;">Whether you're entering new markets or building the product and leadership capabilities needed for your next phase of growth, Hoxton Strategic brings the rare combination of entrepreneurial insight and enterprise-scale execution experience.</p>
+            
+            <div class="form-status" id="formStatus"></div>
+            
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="8d61b0eb-4849-45bb-ac54-bb54fe683e82">
+                <input type="hidden" name="subject" value="New Contact from Hoxton Strategic Website">
+                <input type="hidden" name="from_name" value="Hoxton Strategic Website">
+                
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                
+                <div class="form-group">
+                    <label for="name" style="color: #fff;">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" style="color: #fff;">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company" style="color: #fff;">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="message" style="color: #fff;">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button cta-button-white">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Hoxton Strategic 2025</p>
+        </div>
+    </footer>
+
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -667,10 +837,66 @@
             });
         });
 
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.background = '#fff';
+                navLinks.style.padding = '1rem';
+                navLinks.style.borderBottom = '2px solid #000';
+            }
+        }
+
+        // Form submission with Web3Forms
+        const form = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            alert('Thank you for your message. We will be in touch soon.');
+            
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Prepare form data
+            const formData = new FormData(form);
+            
+            try {
+                // Send to Web3Forms
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    formStatus.textContent = 'Thank you for your message. We will be in touch soon!';
+                    formStatus.className = 'form-status success';
+                    formStatus.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formStatus.textContent = 'There was an error sending your message. Please try again or email directly to justin@hoxtonstrategic.com';
+                formStatus.className = 'form-status error';
+                formStatus.style.display = 'block';
+            }
+            
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
         });
     </script>
 </body>

@@ -45,12 +45,27 @@
             padding: 0 2rem;
         }
 
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         .logo {
             font-size: 1.5rem;
             font-weight: 900;
             letter-spacing: -0.02em;
             color: #000;
             text-decoration: none;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 400;
+            border-left: 2px solid #000;
+            padding-left: 1rem;
+            margin-left: 0.5rem;
         }
 
         .nav-links {
@@ -451,8 +466,23 @@
                 display: block;
             }
 
+            /* Stack logo and tagline on mobile */
+            .logo-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .tagline {
+                border-left: none;
+                padding-left: 0;
+                margin-left: 0;
+                font-size: 0.75rem;
+                color: #666;
+            }
+
             .hero {
-                padding: 8rem 0 4rem;
+                padding: 10rem 0 4rem;
             }
 
             .about-content {
@@ -506,6 +536,10 @@
             .metrics {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .tagline {
+                font-size: 0.8rem;
+            }
         }
 
         /* Small mobile devices */
@@ -525,6 +559,10 @@
             .portfolio h2 {
                 font-size: 1.3rem;
             }
+
+            .tagline {
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
@@ -532,7 +570,10 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <a href="#" class="logo">HOXTON STRATEGIC</a>
+            <div class="logo-section">
+                <a href="#" class="logo">HOXTON STRATEGIC</a>
+                <span class="tagline">Building Product Excellence & Strategic Growth</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -867,10 +908,4 @@
                 formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
             
-            // Reset button state
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        });
-    </script>
-</body>
-</html>
+            // Reset button

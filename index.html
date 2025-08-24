@@ -283,6 +283,9 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background: #fff;
+            color: #000;
+            border: 1px solid #333;
         }
 
         .service-description {
@@ -290,23 +293,10 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-        }
-
-        .service-number-title {
-            background: #fff;
-            color: #000;
-            border: 1px solid #333;
-        }
-
-        .service-description {
             background: #000;
             color: #fff;
             border: 1px solid #333;
         }
-
-      
-
-       
 
         .service-number {
             font-size: 1rem;
@@ -478,14 +468,6 @@
             .service-number-title,
             .service-description {
                 padding: 2rem 1.5rem;
-            }
-
-            .service-item:nth-child(even) .service-number-title {
-                order: 1;
-            }
-
-            .service-item:nth-child(even) .service-description {
-                order: 2;
             }
 
             .metrics {
@@ -773,8 +755,6 @@
             <h2 class="section-title" style="color: #fff;">Ready to Transform?</h2>
             <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; color: #fff;">Whether you're entering new markets or building the product and leadership capabilities needed for your next phase of growth, Hoxton Strategic brings the rare combination of entrepreneurial insight and enterprise-scale execution experience.</p>
             
-            <div class="form-status" id="formStatus"></div>
-            
             <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                 <!-- Web3Forms Access Key -->
                 <input type="hidden" name="access_key" value="8d61b0eb-4849-45bb-ac54-bb54fe683e82">
@@ -801,6 +781,7 @@
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="cta-button cta-button-white">Send Message</button>
+                <div class="form-status" id="formStatus"></div>
             </form>
         </div>
     </section>
@@ -874,6 +855,7 @@
                     formStatus.textContent = 'Thank you for your message. We will be in touch soon!';
                     formStatus.className = 'form-status success';
                     formStatus.style.display = 'block';
+                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     form.reset();
                 } else {
                     throw new Error('Form submission failed');
@@ -882,6 +864,7 @@
                 formStatus.textContent = 'There was an error sending your message. Please try again or email directly to justin@hoxtonstrategic.com';
                 formStatus.className = 'form-status error';
                 formStatus.style.display = 'block';
+                formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
             
             // Reset button state
